@@ -1,0 +1,7 @@
+{
+    "id": "git-host-credentials",
+    "version": "1.0.0",
+    "name": "Git Host Credentials",
+    "description": "Installs Git and SSH client to enable seamless credential bridging from the host VS Code environment.",
+    "options": {}
+}

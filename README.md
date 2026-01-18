@@ -1,19 +1,37 @@
-# Minimal Alpine Dev Container Template
+# Dev Container Templates & Features
 
-This repository is structured as a **Dev Container Template Collection**.
+This repository provides both **Templates** and **Features** for Dev Containers.
 
-## Templates included:
-- **Alpine Git User**: A minimal Alpine environment pre-configured to use your host's Git and SSH credentials.
+## Features
 
-## How to use this as a GitHub Template
-1. Go to this repository's **Settings**.
-2. Check the **Template repository** box.
-3. Now you can click **Use this template** to start new projects with this configuration.
+### Git Host Credentials
+Installs Git and SSH client to enable seamless credential bridging from your host VS Code environment. Works with Alpine, Debian, Ubuntu, RHEL, Fedora, and Arch-based containers.
 
-## How to use via Dev Container CLI / VS Code
-To make this searchable in the VS Code "Add Dev Container Configuration" menu without the complexity of the official community index, you can push a release to your own GitHub Container Registry (GHCR).
+**Usage in any devcontainer.json:**
+```json
+{
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/hypest/devcontainer-github-user/git-host-credentials:1": {}
+  }
+}
+```
 
-### Manual Setup
-If you want to use this in an existing project:
-1. Copy the contents of `src/alpine-git-user/.devcontainer` into your project's root `.devcontainer` folder.
-2. Replace `${templateOption:alpineVersion}` with `latest` in `devcontainer.json`.
+Or reference it by repository path:
+```json
+{
+  "features": {
+    "ghcr.io/hypest/devcontainer-github-user/git-host-credentials": {}
+  }
+}
+```
+
+## Templates
+
+### Alpine Git User
+A minimal Alpine environment pre-configured to use your host's Git and SSH credentials.
+
+**Custom Template ID:** `ghcr.io/hypest/devcontainer-github-user/alpine-git-user`
+
+## Publishing
+This repository uses GitHub Actions to automatically publish templates and features to GitHub Container Registry (GHCR) on every push to `main`.
