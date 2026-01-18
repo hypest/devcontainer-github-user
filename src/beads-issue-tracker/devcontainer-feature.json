@@ -29,6 +29,7 @@
   "containerEnv": {
     "BD_SOCKET": "${socketPath}"
   },
+  "postCreateCommand": "beads-setup",
   "installsAfter": [
     "ghcr.io/devcontainers/features/common-utils",
     "ghcr.io/devcontainers/features/git"
